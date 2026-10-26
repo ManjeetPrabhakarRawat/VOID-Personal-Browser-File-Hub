@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0b0b10" />
+    <meta
+      name="description"
+      content="VOID — A smarter space for everything you store."
+    />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <title>VOID — Personal File Hub</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="brand-mark">V</div>
+          <div><strong>VOID</strong><span>LOCAL FILE HUB</span></div>
+        </div>
+        <nav class="nav" aria-label="Primary">
+          <button data-view="dashboard" class="nav-item active">
+            <span>⌂</span>Dashboard
+          </button>
+          <button data-view="files" class="nav-item">
+            <span>▦</span>All Files <b id="count-files">0</b>
+          </button>
+          <button data-view="recent" class="nav-item">
+            <span>◷</span>Recent
+          </button>
+          <button data-view="favorites" class="nav-item">
+            <span>☆</span>Favorites <b id="count-favorites">0</b>
+          </button>
+          <button data-view="collections" class="nav-item">
+            <span>▣</span>Collections
+          </button>
+          <button data-view="tags" class="nav-item"><span>⌑</span>Tags</button>
+          <button data-view="duplicates" class="nav-item">
+            <span>◈</span>Duplicates
+          </button>
+          <button data-view="storage" class="nav-item">
+            <span>◒</span>Storage
+          </button>
+          <button data-view="settings" class="nav-item">
+            <span>⚙</span>Settings
+          </button>
+        </nav>
+        <div class="sidebar-foot">
+          <div class="privacy">
+            <span class="dot"></span>
+            <div>
+              <strong>Local-first</strong><small>Your files stay here</small>
+            </div>
+          </div>
+          <div class="storage-mini">
+            <span>Browser storage</span
+            ><strong id="storage-mini">Calculating…</strong>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button
+            class="icon-btn mobile-menu"
+            id="mobile-menu"
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
+          <div class="crumb" id="breadcrumb">Dashboard</div>
+          <div class="top-actions">
+            <div class="search-wrap">
+              <span>⌕</span
+              ><input
+                id="global-search"
+                placeholder="Search your library…"
+                autocomplete="off"
+              /><kbd>/</kbd>
+            </div>
+            <button class="secondary-btn" id="import-btn" data-action="import">
+              ＋ Import
+            </button>
+          </div>
+        </header>
+
+        <section class="workspace" id="workspace">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">VOID / DASHBOARD</div>
+              <h1>Dashboard</h1>
+              <p>Your private browser workspace</p>
+            </div>
+            <div class="page-actions">
+              <button class="primary-btn" data-action="import">
+                ＋ Import
+              </button>
+            </div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat">
+              <span class="stat-label">Indexed files</span
+              ><strong class="stat-value">0</strong
+              ><small>Your local library</small>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Managed size</span
+              ><strong class="stat-value">0 B</strong
+              ><small>Stored in this browser</small>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Favorites</span
+              ><strong class="stat-value">0</strong><small>Saved locally</small>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Collections</span
+              ><strong class="stat-value">0</strong
+              ><small>Logical groups</small>
+            </div>
+          </div>
+          <section class="panel">
+            <div class="panel-head"><h3>Your library</h3></div>
+            <div class="panel-body">
+              <div class="empty">
+                <div class="empty-icon">◌</div>
+                <h3>Loading VOID…</h3>
+                <p>Your local library is being initialized.</p>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div class="drop-overlay" id="drop-overlay">
+      <div>
+        <div class="drop-icon">↓</div>
+        <h2>Drop files into VOID</h2>
+        <p>Release to add them to your local library</p>
+      </div>
+    </div>
+    <input type="file" id="file-picker" multiple hidden />
+
+    <div class="modal-backdrop hidden" id="modal-backdrop">
+      <div class="modal" id="modal"></div>
+    </div>
+    <div class="toast-stack" id="toast-stack"></div>
+    <script src="js/app.js?v=5" defer></script>
+  </body>
+</html>
