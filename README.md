@@ -6,9 +6,12 @@ It provides file importing, folder management, previews, search, favorites, coll
 
 ---
 
-## 🌐 Live Demo
 
-🔗 **Live Application:** Coming Soon
+## 🔗 Live Demo & Repository
+
+🌐 **Live Demo:** [VOID — Live](https://void-pjtc.onrender.com/)
+
+💻 **GitHub Repository:** [VOID — GitHub](https://github.com/ManjeetPrabhakarRawat/VOID-Personal-Browser-File-Hub)
 
 ---
 
@@ -536,11 +539,11 @@ flowchart LR
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/ManjeetPrabhakarRawat/VOID-PERSONAL-BROWSER-FILE-HUB.git
+git clone https://github.com/ManjeetPrabhakarRawat/VOID-Personal-Browser-File-Hub.git
 ```
 
 ```bash
-cd VOID-PERSONAL-BROWSER-FILE-HUB
+cd VOID-Personal-Browser-File-Hub
 ```
 
 ### 2. Start a Local HTTP Server
